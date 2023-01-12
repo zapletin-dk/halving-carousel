@@ -1,23 +1,29 @@
 package com.epam.rd.autotasks;
 
-public class CarouselRun {
-    int position = 0;
-    int []array = DecrementingCarousel.elements;
+public class HalvingCarouselRun extends CarouselRun {
+
+    @Override
     public int next() {
         int count = 0;
+
         while (count < array.length && array[position %= array.length] <= 0) {
             position++;
             count++;
         }
         if (count == array.length) return -1;
-        return array[position++] --;
+
+        return postDivision();
     }
 
+    @Override
     public boolean isFinished() {
-        for (int var: array) {
-            if (var > 0) return false;
-        }
-        return true;
+        return super.isFinished();
     }
 
+    public int postDivision () {
+        int temp = array[position];
+        array[position++] /=2;
+        return temp;
+
+    }
 }
