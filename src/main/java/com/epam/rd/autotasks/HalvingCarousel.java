@@ -4,7 +4,6 @@ public class HalvingCarousel extends DecrementingCarousel{
     public HalvingCarousel(int capacity) {
         super(capacity);
     }
-
     @Override
     public CarouselRun run() {
         if (!called) {

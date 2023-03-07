@@ -2,7 +2,7 @@ package com.epam.rd.autotasks;
 
 public class CarouselRun {
     int position = 0;
-    int []array = DecrementingCarousel.elements;
+    int[] array = DecrementingCarousel.elements;
     public int next() {
         int count = 0;
         while (count < array.length && array[position %= array.length] <= 0) {
@@ -14,8 +14,8 @@ public class CarouselRun {
     }
 
     public boolean isFinished() {
-        for (int var: array) {
-            if (var > 0) return false;
+        for (int element: array) {
+            if (element > 0) return false;
         }
         return true;
     }
